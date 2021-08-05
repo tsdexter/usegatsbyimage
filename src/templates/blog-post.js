@@ -46,7 +46,10 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
         </header>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+          <section
+            itemProp="articleBody"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
         )}
 
         <hr />
